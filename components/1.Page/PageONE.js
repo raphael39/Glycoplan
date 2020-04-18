@@ -98,7 +98,7 @@ const PageOne = (props) => {
 
   const handleSearch = (searchVal) => {
     setSearchValue(searchVal);
-    console.log('<-- searchValue 101 -->', searchValue)
+    console.log('<-- searchValue 101 -->', searchValue);
     filterList(searchVal);
   };
 
@@ -107,24 +107,26 @@ const PageOne = (props) => {
   };
 
   const filterList = (searchVal) => {
-      console.log('test -->', searchVal);
-      const green = GlycoListe.green.filter(function (Food) {
-        return Food.includes(searchVal);
-      })
-      
+    console.log('test -->', searchVal);
+    const green = GlycoListe.green.filter(function (Food) {
+      return Food.includes(searchVal);
+    });
+
     setGlycoListeFiltered({
       green: green,
       yellow: GlycoListe.yellow.filter(function (Food) {
         return Food.includes(searchVal);
       }),
     });
-}
+  };
 
-  
   return (
     <View>
       <Seachrbar handleSearch={handleSearch} />
-      <ListView green={GlycoListeFiltered.green} yellow={GlycoListeFiltered.yellow} />
+      <ListView
+        green={GlycoListeFiltered.green}
+        yellow={GlycoListeFiltered.yellow}
+      />
     </View>
   );
 };
