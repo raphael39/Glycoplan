@@ -27,8 +27,9 @@ const Seachrbar = (props) => {
           placeholder="Nachschlagen..."
           style={styles.inputContainer}
           onChangeText={SearchInputHandler}
+          clearButtonMode="always"
         />
-        <Button title="search" /* onPress={} */ />
+        
       </View>
     </View>
   );
@@ -36,11 +37,11 @@ const Seachrbar = (props) => {
 
 const styles = StyleSheet.create({
   inputContainer: {
-    width: '80%',
+    width: '90%',
     borderColor: 'black',
     borderWidth: 1,
     padding: 10,
-    marginBottom: 15,
+    marginBottom: 5,
     borderRadius: 12,
     backgroundColor: 'white',
   },
@@ -49,9 +50,9 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     paddingLeft: 10,
     paddingRight: 10,
-    marginBottom: 10,
+    marginBottom: 0,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    /* justifyContent: 'space-around', */
     backgroundColor: '#639a67',
   },
 });
