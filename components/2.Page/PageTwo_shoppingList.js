@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import { useSelector } from 'react-redux';
 import { Text, StyleSheet, View } from 'react-native';
+import { useDispatch } from 'react-redux';
+import { addItemToList, filterRecommendations } from './../../store/actions/shoppingListAndFavorites';
 
 import AddItemHeader from '../2.Page/PageTWOComponents/AddItemHeader';
 import { SHOPPINGITEMS } from './../../Data/data';
@@ -12,9 +14,9 @@ const PageTwo_shopping = (props) => {
     const [EnteredGrocery, setEnteredGrocery] = useState('');
     const shoppingListItemsStateDerived = useSelector((state) => state.shoppingListFavorites.shoppingList)
 
+
    const enteredGroceryHandler = (enteredText) => {
     setEnteredGrocery(enteredText);
-    
   };
    const resetSetGrocery = () => {
     setEnteredGrocery('');

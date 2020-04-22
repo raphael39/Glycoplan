@@ -11,13 +11,19 @@ import { Recipes } from './../../Data/data';
 const PageThreeRecipes = (props) => {
   const renderGridItem = (itemData) => {
     return (
-      <TouchableOpacity style={styles.gridItem} onPress={() => {
-        props.navigation.navigate({routeName: 'RecipesDetail', params: {
-          recipeID: itemData.item.id
-        } })
-      }}>
+      <TouchableOpacity
+        style={styles.gridItem}
+        onPress={() => {
+          props.navigation.navigate({
+            routeName: 'RecipesDetail',
+            params: {
+              recipeID: itemData.item.id,
+            },
+          });
+        }}
+      >
         <View>
-          <Text>{itemData.item.title}</Text>
+          <Text style={styles.gridText}>{itemData.item.title}</Text>
         </View>
       </TouchableOpacity>
     );
@@ -27,17 +33,29 @@ const PageThreeRecipes = (props) => {
 };
 
 PageThreeRecipes.navigationOptions = {
-  headerTitle: 'Rezeptsammlung', 
+  headerTitle: 'Rezeptsammlung',
   headerStyle: {
-    backgroundColor: '#639a67'
-  }
+    backgroundColor: '#639a67',
+  },
 };
 
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
     margin: 15,
-    height: 150,
+    height: 100,
+    borderWidth: 2,
+    borderColor: 'green',
+    borderRadius: 10,
+    alignContent: 'center',
+    justifyContent: 'center',
+    padding: 10,
+    shadowColor: '#350',
+    shadowOpacity: 0.15,
+  },
+  gridText: {
+    fontSize: 16,
+    textAlign: 'center'
   },
 });
 

@@ -63,7 +63,7 @@ export const green = [
   { title: 'Kokosnuss', color: 'green', id: 'A56' },
   { title: 'Kokosnusswasser (Dr. Martins)', color: 'green', id: 'A57' },
   { title: 'Kokosöl/Kokosfett', color: 'green', id: 'A58' },
-  { title: '', color: 'green', id: 'A59' },
+  { title: 'Kopfsalat', color: 'green', id: 'A59' },
 ];
 
 export const yellow = [
@@ -86,9 +86,32 @@ export const yellow = [
   { title: 'Datteln', color: 'yellow', id: 'B18' },
   { title: 'Dinkel (Bio-Qualität)', color: 'yellow', id: 'B19' },
   { title: 'Dinkelbrot', color: 'yellow', id: 'B20' },
-  /* { title: '', color: 'yellow', id: 'B21' },
-  { title: '', color: 'yellow', id: 'B22' },
-  { title: '', color: 'yellow', id: 'B23' }, */
+  { title: 'Einkorn (Ur-Dinkel)', color: 'yellow', id: 'B21' },
+  { title: 'Emmermehl (Ur-Weizen)', color: 'yellow', id: 'B22' },
+  { title: 'Erdbeeren', color: 'yellow', id: 'B23' }, 
+];
+export const red = [
+  { title: 'Apfelsaft', color: 'red', id: 'C1' },
+  { title: 'Bananen', color: 'red', id: 'C2' },
+  { title: 'Bier', color: 'red', id: 'C3' },
+  { title: 'Cashewnüsse', color: 'red', id: 'C4' },
+  { title: 'Chips', color: 'red', id: 'C5' },
+  { title: 'Couscous (Weizen)', color: 'red', id: 'C6' },
+  { title: 'Erdnüsse', color: 'red', id: 'C7' },
+  { title: 'Erdnusöl', color: 'red', id: 'C8' },
+  { title: 'Fastfood (Hamburger, Pizza)', color: 'red', id: 'C9' },
+  { title: 'Feigen', color: 'red', id: 'C10' },
+  { title: 'firsch gepresster Fruchsaft', color: 'red', id: 'C11' },
+  { title: 'frittierte Speisen', color: 'red', id: 'C12' },
+  { title: 'Fruchtnektar', color: 'red', id: 'C13' },
+  { title: 'Fruchtsaftkonzentration', color: 'red', id: 'C14' },
+  { title: 'Gerste', color: 'red', id: 'C15' },
+  { title: 'Gnochhi (Fertigprodukt)', color: 'red', id: 'C16' },
+  { title: 'Hafer', color: 'red', id: 'C17' },
+  { title: 'Hagebutte', color: 'red', id: 'C18' },
+  { title: 'Hähnchenbrust mit Haut', color: 'red', id: 'C19' },
+  { title: 'Hähnchenschlegel', color: 'red', id: 'C20' },
+  
 ];
 
 export const Recipes = [
@@ -101,25 +124,35 @@ export const Recipes = [
 ];
 
 export const RecipesDetailsArr = [
-  new RecipeDetails('R1', 'Auberginenschnitzel & Tomatensoße', 'green', [
-    '2 große Auberginen',
-    '1 EL Sahne',
-    'Kichererbsenmehl',
-    '100g alter Pecorino',
-    '1 EL firische italienische Kräuter',
-    'Meersalz',
-    'frisch gemahlener Pfeffer',
-    '2 Eier',
-    'Olivenöl',
-    '500g Tomaten, enthäuten, würfeln',
-    '1 Knoblauchzehe',
-    '1 EL Balsamicoessig',
-    'Chili',
-    'Salz',
-  ]),
-  new RecipeDetails('R2', 'Brokkoli-Auflauf', 'green', ['Lauch']),
-  new RecipeDetails('R3', 'Curry mit grünen Linsen', 'green', ['Lauch']),
-  new RecipeDetails('R4', 'Gefüllte Zucchini mit Quinoa', 'green', ['Lauch']),
-  new RecipeDetails('R5', 'Italienische Kürbissuppe', 'green', ['Lauch']),
-  new RecipeDetails('R6', 'Karotten-Kokos-Suppe', 'green', ['Lauch']),
+  new RecipeDetails(
+    'R1',
+    'Auberginenschnitzel & Tomatensoße',
+    'green',
+    [
+      '2 große Auberginen',
+      '1 EL Sahne',
+      'Kichererbsenmehl',
+      '100g alter Pecorino',
+      '1 EL firische italienische Kräuter',
+      'Meersalz',
+      'frisch gemahlener Pfeffer',
+      '2 Eier',
+      'Olivenöl',
+      '500g Tomaten, enthäuten, würfeln',
+      '1 Knoblauchzehe',
+      '1 EL Balsamicoessig',
+      'Chili',
+      'Salz',
+    ],
+    [
+      '1. Die Auberginenscheiben in kochendem Salzwasser mit Sahne ca. 1 Minute kochen, gut abtropfen und trocken tupfen mit Küchenpapier',
+      '2. In Kichererbsenmehl wenden, dann in verschlagenem Ei und zuletzt in Käseraspeln wenden, in heißem Olivenöl von beiden Seiten knusprig braten',
+      '3. Für das Tomatenragout die fein gewürfelte Zwiebeln und die Knoblauchzehe glasig dünsten, frische Tomaten und Balsamico zugeben, abschmecken und mit Basilikum würzen',
+    ]
+  ),
+  new RecipeDetails('R2', 'Brokkoli-Auflauf', 'green', ['Lauch'], ['1. Ja so läufts!']),
+  new RecipeDetails('R3', 'Curry mit grünen Linsen', 'green', ['Lauch'], ['1. Ja so läufts!']),
+  new RecipeDetails('R4', 'Gefüllte Zucchini mit Quinoa', 'green', ['Lauch'], ['1. Ja so läufts!']),
+  new RecipeDetails('R5', 'Italienische Kürbissuppe', 'green', ['Lauch'], ['1. Ja so läufts!']),
+  new RecipeDetails('R6', 'Karotten-Kokos-Suppe', 'green', ['Lauch'], ['1. Ja so läufts!']),
 ];

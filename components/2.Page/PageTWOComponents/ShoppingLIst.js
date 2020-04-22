@@ -102,7 +102,7 @@ const ShoppingListView = (props) => {
             >
               <View
                 style={{
-                  borderColor: '#red',
+                  borderColor: 'red',
                   borderWidth: 3,
                   width: 25,
                   height: 25,

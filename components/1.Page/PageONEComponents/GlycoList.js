@@ -22,7 +22,7 @@ const GlycoList = (props) => {
     <ScrollView keyboardShouldPersistTaps={'handled'}>
       {props.green.map((goal) => (
         <View style={styles.listItem}>
-          <Text key={goal}>{goal.title}</Text>
+          <Text key={Math.random()}>{goal.title}</Text>
           <TouchableOpacity onPress={() => addItemHandler(goal)}>
             <View
               style={{
@@ -64,6 +64,28 @@ const GlycoList = (props) => {
           </TouchableOpacity>
         </View>
       ))}
+      {/* {props.red.map((goal) => (
+        <View style={styles.listItem3}>
+          <Text key={goal}>{goal.title}</Text>
+
+          <TouchableOpacity onPress={() => addItemHandler(goal)}>
+            <View
+              style={{
+                backgroundColor: 'red',
+                width: 27,
+                height: 27,
+                borderRadius: '50%',
+                display: 'flex',
+                flexDirection: 'row',
+                justifyContent: 'center',
+                alignItems: 'center',
+              }}
+            >
+              <Text>➕</Text>
+            </View>
+          </TouchableOpacity>
+        </View>
+      ))} */}
     </ScrollView>
   );
 };
@@ -89,6 +111,18 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'white',
     borderColor: '#ffd31d',
+    borderBottomWidth: 2,
+    shadowColor: '#000',
+    shadowOpacity: 0.15,
+  },
+  listItem3: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    display: 'flex',
+    alignItems: 'center',
+    padding: 10,
+    backgroundColor: 'white',
+    borderColor: 'red',
     borderBottomWidth: 2,
     shadowColor: '#000',
     shadowOpacity: 0.15,

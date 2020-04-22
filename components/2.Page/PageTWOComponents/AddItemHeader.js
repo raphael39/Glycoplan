@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addItemToList } from './../../../store/actions/shoppingListAndFavorites';
+import { addItemToList, filterRecommendations } from './../../../store/actions/shoppingListAndFavorites';
 import {
   Text,
   View,
@@ -16,6 +16,8 @@ const AddItem = (props) => {
   const addItemHandler = () => {
     dispatch(addItemToList({ title: props.EnteredGrocery, color: 'none' }));
   };
+
+  
 
   const returnKeyboardHandler = (e) => {
     console.log(e.nativeEvent.text);

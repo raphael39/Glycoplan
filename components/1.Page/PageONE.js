@@ -4,18 +4,20 @@ import { View, Text } from 'react-native';
 import Seachrbar from './PageONEComponents/Search';
 import { SHOPPINGITEMS } from './../../Data/data';
 import shoppingList from './../../models/shoppinList';
-import {green, yellow} from './../../Data/data'
+import {green, yellow, red} from './../../Data/data'
 
 const PageOne = (props) => {
   const [searchValue, setSearchValue] = useState('');
   const [GlycoListe, setGlycoListe] = useState({
     green: green,
-    yellow: yellow
+    yellow: yellow,
+    red: red
   });
 
   const [GlycoListeFiltered, setGlycoListeFiltered] = useState({
     green: [],
     yellow: [],
+    /* red: [] */
   });
 
   const handleSearch = (searchVal) => {
@@ -31,6 +33,9 @@ const PageOne = (props) => {
       yellow: GlycoListe.yellow.filter(function (Food) {
         return Food.title.includes(searchVal);
       }),
+      /* red: GlycoListe.red.filter(function (Food) {
+        return Food.title.includes(searchVal);
+      }), */
     });
   };
 
@@ -48,6 +53,7 @@ const PageOne = (props) => {
          
           green={GlycoListe.green}
           yellow={GlycoListe.yellow}
+          red={GlycoListe.red}
         />
       </View>
     );
@@ -60,6 +66,7 @@ const PageOne = (props) => {
         
         green={GlycoListeFiltered.green}
         yellow={GlycoListeFiltered.yellow}
+        /* red={GlycoListeFiltered.red} */
       />
     </View>
   );
