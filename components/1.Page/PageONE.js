@@ -17,7 +17,7 @@ const PageOne = (props) => {
   const [GlycoListeFiltered, setGlycoListeFiltered] = useState({
     green: [],
     yellow: [],
-    /* red: [] */
+     red: [] 
   });
 
   const handleSearch = (searchVal) => {
@@ -33,9 +33,9 @@ const PageOne = (props) => {
       yellow: GlycoListe.yellow.filter(function (Food) {
         return Food.title.includes(searchVal);
       }),
-      /* red: GlycoListe.red.filter(function (Food) {
+       red: GlycoListe.red.filter(function (Food) {
         return Food.title.includes(searchVal);
-      }), */
+      }), 
     });
   };
 
@@ -66,7 +66,7 @@ const PageOne = (props) => {
         
         green={GlycoListeFiltered.green}
         yellow={GlycoListeFiltered.yellow}
-        /* red={GlycoListeFiltered.red} */
+         red={GlycoListeFiltered.red} 
       />
     </View>
   );

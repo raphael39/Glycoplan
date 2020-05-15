@@ -4,6 +4,7 @@ import { DELETE_ITEM_FROMLIST } from '../actions/shoppingListAndFavorites';
 import { FILTER_RECOMMENDATIONS } from '../actions/shoppingListAndFavorites';
 import shoppingListModel from './../../models/shoppinList';
 
+
 const initialState = {
   shoppingList: SHOPPINGITEMS,
   favoritItemsState: [],

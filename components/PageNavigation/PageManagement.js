@@ -17,6 +17,7 @@ import { Ionicons } from '@expo/vector-icons';
 
 import PageOne from '../1.Page/PageONE';
 import PageTwo_shopping from '../2.Page/PageTwo_shoppingList';
+import PageTwoItemDetails from '../2.Page/PageTWOComponents/ShoppingQuantity';
 import PageThreeRecipes from '../3.Page/PageThree_recipes';
 import { color } from 'react-native-reanimated';
 
@@ -36,6 +37,17 @@ const RecipeNavigator = createStackNavigator(
   }
 );
 
+const ShoppingListNavigator = createStackNavigator(
+  {
+    ShoppingList: {
+      screen: PageTwo_shopping
+    },
+    ShoppingItemDetails: {
+      screen: PageTwoItemDetails
+    }
+  }
+)
+
 
 const GlycoShoppingNavigator = createBottomTabNavigator(
   {
@@ -43,7 +55,7 @@ const GlycoShoppingNavigator = createBottomTabNavigator(
       screen: PageOne,
     },
     '🛒 Einkaufsliste': {
-      screen: PageTwo_shopping,
+      screen: ShoppingListNavigator,
     },
     '👨‍🍳 Rezepte': {
       screen: RecipeNavigator,

@@ -11,6 +11,8 @@ import ShoppingListView from './PageTWOComponents/ShoppingLIst';
 import SearchItemsRecommendation from './PageTWOComponents/SearchItemsRecommendation';
 
 const PageTwo_shopping = (props) => {
+ 
+  
     const [EnteredGrocery, setEnteredGrocery] = useState('');
     const shoppingListItemsStateDerived = useSelector((state) => state.shoppingListFavorites.shoppingList)
 
@@ -39,6 +41,15 @@ const PageTwo_shopping = (props) => {
 
     </View>
   );
+};
+
+PageTwo_shopping.navigationOptions = {
+  headerTitle: 'test',
+  headerStyle: {
+    backgroundColor: '#639a67',
+    
+  },
+  header: null,
 };
 
 const styles = StyleSheet.create({

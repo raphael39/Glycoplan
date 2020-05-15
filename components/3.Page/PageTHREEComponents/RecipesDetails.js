@@ -31,7 +31,7 @@ const RecipesDetailsPage = (props) => {
         </View>
 
         {selectedRecipeObject.ingredients.map((GroceryItem) => (
-          <View style={styles.listItem}>
+          <View style={styles.listItem} key={GroceryItem}>
             <Text key={Math.random()}>{GroceryItem}</Text>
 
             <TouchableOpacity onPress={() => addItemHandler(GroceryItem)}>
@@ -58,8 +58,8 @@ const RecipesDetailsPage = (props) => {
         </View>
 
         <View style={[styles.steps]}>
-          {selectedRecipeObject.steps.map((step) => {
-            return <View><Text key={Math.random()} style={styles.stepsText}>{step}</Text><Text key={Math.random()}>{"\n"}</Text></View>
+          {selectedRecipeObject.steps.map((step, index) => {
+            return <View key={`step${index}`}><Text key={Math.random()} style={styles.stepsText}>{step}</Text><Text key={Math.random()}>{"\n"}</Text></View>
           })}
          
         </View>

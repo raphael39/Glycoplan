@@ -40,11 +40,11 @@ const ShoppingListView = (props) => {
       <ScrollView keyboardShouldPersistTaps={'handled'}>
         {/* this is start of green */}
         {greenShoppingItems.map((GroceryItem) => (
-          <View style={styles.listItem}>
-            <Text>
-              {GroceryItem.title}
-            </Text>
-
+          <View style={styles.listItem} key={`shopping${GroceryItem.id}`}>
+            <View>
+            <Text>{GroceryItem.title}</Text>
+            <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
+            </View>
             <TouchableOpacity
               onPress={() => {
                 deleteItemHandler(GroceryItem.id);
@@ -65,10 +65,11 @@ const ShoppingListView = (props) => {
         {/* this is end of green */}
         {/* this is Start of yellow */}
         {yellowShoppingItems.map((GroceryItem) => (
-          <View style={styles.listItem2}>
-            <Text>
-              {GroceryItem.title}
-            </Text>
+          <View style={styles.listItem2} key={`shopping${GroceryItem.id}`}>
+            <View>
+            <Text>{GroceryItem.title}</Text>
+            <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
+            </View>
 
             <TouchableOpacity
               onPress={() => {
@@ -90,10 +91,11 @@ const ShoppingListView = (props) => {
         {/* this is end of yellow */}
         {/* this is Start of Red */}
         {redShoppingItems.map((GroceryItem) => (
-          <View style={styles.listItem3}>
-            <Text>
-              {GroceryItem.title}
-            </Text>
+          <View style={styles.listItem3} key={`shopping${GroceryItem.id}`}>
+            <View>
+            <Text>{GroceryItem.title}</Text>
+            <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
+            </View>
 
             <TouchableOpacity
               onPress={() => {
@@ -116,9 +118,7 @@ const ShoppingListView = (props) => {
         {/* this is Start of None */}
         {noneShoppingItems.map((GroceryItem) => (
           <View style={styles.listItem4}>
-            <Text>
-              {GroceryItem.title}
-            </Text>
+            <Text>{GroceryItem.title}</Text>
 
             <TouchableOpacity
               onPress={() => {
@@ -138,9 +138,6 @@ const ShoppingListView = (props) => {
           </View>
         ))}
         {/* this is end of None */}
-
-
-
       </ScrollView>
     </View>
   );
@@ -237,6 +234,9 @@ const styles = StyleSheet.create({
     borderTopLeftRadius: 12,
     borderBottomLeftRadius: 12,
   },
+  quantity: {
+    fontSize: 11,
+  }
 });
 
 export default ShoppingListView;

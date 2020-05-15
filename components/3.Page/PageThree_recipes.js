@@ -42,8 +42,8 @@ PageThreeRecipes.navigationOptions = {
 const styles = StyleSheet.create({
   gridItem: {
     flex: 1,
-    margin: 15,
-    height: 100,
+    margin: 5,
+    height: 80,
     borderWidth: 2,
     borderColor: 'green',
     borderRadius: 10,
@@ -52,10 +52,13 @@ const styles = StyleSheet.create({
     padding: 10,
     shadowColor: '#350',
     shadowOpacity: 0.15,
+    backgroundColor: 'green',
   },
   gridText: {
     fontSize: 16,
-    textAlign: 'center'
+    fontWeight: '700',
+    textAlign: 'center',
+    color: 'white',
   },
 });
 
