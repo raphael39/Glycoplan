@@ -59,9 +59,11 @@ const shoppingListFavoritesReducer = (state = initialState, action) => {
       const indexUpdate = state.shoppingList.findIndex(
         (GroceryItem) => GroceryItem.id === action.ItemID
       );
-      console.log('redux found Item', selectedItem);
-      
-      
+      selectedItem = {...selectedItem, quantity: `${action.quantity}g`};
+      const updatedListQuantity= [...state.shoppingList,]
+      updatedListQuantity.splice(indexUpdate, 1, selectedItem);
+      console.log(updatedListQuantity);
+      return { ...state, shoppingList: updatedListQuantity };
 
     default:
       return state;

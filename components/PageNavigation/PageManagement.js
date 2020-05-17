@@ -1,13 +1,3 @@
-/* import React from 'react';
-import PageOne from './1.Page/PageONE';
-
-const PageManagement = (props) => {
-  return <PageOne />;
-};
-
-export default PageManagement;
- */
-
 import React, { useState } from 'react';
 import { Platform, Text, View, StyleSheet } from 'react-native';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
@@ -41,6 +31,17 @@ const ShoppingListNavigator = createStackNavigator(
   {
     ShoppingList: {
       screen: PageTwo_shopping
+    },
+    ShoppingItemDetails: {
+      screen: PageTwoItemDetails
+    }
+  }
+)
+
+const GlycoListNavigator = createStackNavigator(
+  {
+    GlyvoListe: {
+      screen: PageOne
     },
     ShoppingItemDetails: {
       screen: PageTwoItemDetails

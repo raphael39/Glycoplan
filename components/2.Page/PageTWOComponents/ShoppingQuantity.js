@@ -25,15 +25,14 @@ const ShoppingQuantity = (props) => {
 
   const handleQuantity = (newQuantity) => {
     setEnteredInputQuantity(newQuantity);
-  }
- 
+  };
 
   return (
     <View>
       <Text>{selectedItem.title}</Text>
       <View style={styles.updateInput}>
         <TextInput
-          /* keyboardType="numeric" */
+          keyboardType="numeric"
           placeholder={selectedItem.quantity}
           clearButtonMode="always"
           style={styles.inputContainerDetails}
@@ -41,10 +40,19 @@ const ShoppingQuantity = (props) => {
           /* onChangeText={props.enteredGroceryHandler}
           onSubmitEditing={(e) => returnKeyboardHandler(e)} */
         />
+        <View
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}>
+          <Text key={`${selectedItem.title}`}>
+            g
+          </Text>
+        </View>
         <Button
           title="Update"
           onPress={() => {
-            console.log('selected -->', selectedItem);
             dispatch(updateQuantity(selectedItem.id, EnteredInputQuantity));
             setEnteredInputQuantity('');
           }}
@@ -56,7 +64,7 @@ const ShoppingQuantity = (props) => {
 
 const styles = StyleSheet.create({
   inputContainerDetails: {
-    width: '80%',
+    width: '50%',
     borderBottomColor: 'black',
     padding: 10,
     marginBottom: 0,
@@ -70,6 +78,7 @@ const styles = StyleSheet.create({
     paddingRight: 10,
     marginBottom: 10,
     flexDirection: 'row',
+    textAlign: 'center',
     justifyContent: 'space-around',
   },
 });
