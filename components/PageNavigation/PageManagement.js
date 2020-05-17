@@ -6,12 +6,11 @@ import {createStackNavigator} from 'react-navigation-stack'
 import { Ionicons } from '@expo/vector-icons';
 
 import PageOne from '../1.Page/PageONE';
+import ListItemDetails from '../1.Page/PageONEComponents/ListItemDetails';
 import PageTwo_shopping from '../2.Page/PageTwo_shoppingList';
 import PageTwoItemDetails from '../2.Page/PageTWOComponents/ShoppingQuantity';
 import PageThreeRecipes from '../3.Page/PageThree_recipes';
 import { color } from 'react-native-reanimated';
-
-
 import RecipesPage from '../3.Page/PageThree_recipes';
 import RecipesDetailPage from '../3.Page/PageTHREEComponents/RecipesDetails'
 
@@ -40,11 +39,11 @@ const ShoppingListNavigator = createStackNavigator(
 
 const GlycoListNavigator = createStackNavigator(
   {
-    GlyvoListe: {
+    GlycoListe: {
       screen: PageOne
     },
-    ShoppingItemDetails: {
-      screen: PageTwoItemDetails
+    NutrientDetails: {
+      screen: ListItemDetails
     }
   }
 )
@@ -53,7 +52,7 @@ const GlycoListNavigator = createStackNavigator(
 const GlycoShoppingNavigator = createBottomTabNavigator(
   {
     '🚦 Ampelliste': {
-      screen: PageOne,
+      screen: GlycoListNavigator,
     },
     '🛒 Einkaufsliste': {
       screen: ShoppingListNavigator,

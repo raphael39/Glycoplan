@@ -20,6 +20,12 @@ const GlycoList = (props) => {
   return (
     <ScrollView style={styles.scrollView} keyboardShouldPersistTaps={'handled'}>
       {props.green.map((goal) => (
+        <TouchableOpacity
+        onPress={() => {
+          props.handleStackNavigatorToDetails(goal.id)
+        }}
+        key={`shopping90View${goal.id}`}
+      >
         <View style={styles.listItem} key={goal.id}>
           <Text style={styles.title} key={goal.title}>{goal.title}</Text>
           <TouchableOpacity onPress={() => addItemHandler(goal)}>
@@ -41,6 +47,7 @@ const GlycoList = (props) => {
             </View>
           </TouchableOpacity>
         </View>
+        </TouchableOpacity>
       ))}
 
       {props.yellow.map((goal) => (

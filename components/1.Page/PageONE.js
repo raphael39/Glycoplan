@@ -39,6 +39,15 @@ const PageOne = (props) => {
     });
   };
 
+  const handleStackNavigatorToDetails = (id) => {
+    props.navigation.navigate({
+      routeName: 'NutrientDetails',
+      params: {
+        selectedItemID: id
+      },
+    });
+  };
+
 
 
   if (
@@ -54,6 +63,7 @@ const PageOne = (props) => {
           green={GlycoListe.green}
           yellow={GlycoListe.yellow}
           red={GlycoListe.red}
+          handleStackNavigatorToDetails={handleStackNavigatorToDetails}
         />
       </View>
     );
@@ -66,10 +76,19 @@ const PageOne = (props) => {
         
         green={GlycoListeFiltered.green}
         yellow={GlycoListeFiltered.yellow}
-         red={GlycoListeFiltered.red} 
+         red={GlycoListeFiltered.red}
+         handleStackNavigatorToDetails={handleStackNavigatorToDetails} 
       />
     </View>
   );
 };
+PageOne.navigationOptions = {
+  headerTitle: 'test',
+  headerStyle: {
+    backgroundColor: '#639a67',
+  },
+  headerShown: false,
+};
 
 export default PageOne;
+

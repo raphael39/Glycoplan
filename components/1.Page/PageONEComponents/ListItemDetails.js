@@ -10,20 +10,18 @@ import {
 } from 'react-native';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { updateQuantity } from './../../../store/actions/shoppingListAndFavorites';
+
 
 const ListItemDetails = (props) => {
   const dispatch = useDispatch();
-  const selectedItemID = props.navigation.getParam('ItemID');
-  let selectedItem = shoppingListItemsStateDerived.find(
-    (GroceryItem) => GroceryItem.id === selectedItem
-  );
+  const selectedItemID = props.navigation.getParam('selectedItemID');
+  
 
  
 
   return (
     <View>
-      <Text>{selectedItem.title}</Text>
+      <Text>{selectedItemID}</Text>
     </View>
   );
 };
