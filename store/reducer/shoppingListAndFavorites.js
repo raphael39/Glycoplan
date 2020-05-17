@@ -2,6 +2,7 @@ import { SHOPPINGITEMS, green, yellow } from '../../Data/data';
 import { ADD_ITEM_TOLIST } from '../actions/shoppingListAndFavorites';
 import { DELETE_ITEM_FROMLIST } from '../actions/shoppingListAndFavorites';
 import { FILTER_RECOMMENDATIONS } from '../actions/shoppingListAndFavorites';
+import { UPDATE_QUANTITY } from '../actions/shoppingListAndFavorites';
 import shoppingListModel from './../../models/shoppinList';
 
 
@@ -26,7 +27,7 @@ const shoppingListFavoritesReducer = (state = initialState, action) => {
           new shoppingListModel(
             Math.random().toString(),
             action.ItemTitle,
-            '10kg',
+            '100g',
             action.colorCode
           ),
           ...state.shoppingList,
@@ -49,7 +50,18 @@ const shoppingListFavoritesReducer = (state = initialState, action) => {
         (Food) => Food.title.length > 12);
         console.log('updatedFilterd -1- -->', updatedFiltered);
         const LastTry = [...updatedFiltered];
-      return Object.assign({}, state, { greenFiltered: LastTry });;
+      return Object.assign({}, state, { greenFiltered: LastTry });
+
+      case UPDATE_QUANTITY: 
+      let selectedItem = state.shoppingList.find(
+        (GroceryItem) => GroceryItem.id === action.ItemID
+      );
+      const indexUpdate = state.shoppingList.findIndex(
+        (GroceryItem) => GroceryItem.id === action.ItemID
+      );
+      console.log('redux found Item', selectedItem);
+      
+      
 
     default:
       return state;

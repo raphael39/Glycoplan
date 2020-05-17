@@ -1,8 +1,11 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Text, StyleSheet, View } from 'react-native';
 import { useDispatch } from 'react-redux';
-import { addItemToList, filterRecommendations } from './../../store/actions/shoppingListAndFavorites';
+import {
+  addItemToList,
+  filterRecommendations,
+} from './../../store/actions/shoppingListAndFavorites';
 
 import AddItemHeader from '../2.Page/PageTWOComponents/AddItemHeader';
 import { SHOPPINGITEMS } from './../../Data/data';
@@ -11,20 +14,27 @@ import ShoppingListView from './PageTWOComponents/ShoppingLIst';
 import SearchItemsRecommendation from './PageTWOComponents/SearchItemsRecommendation';
 
 const PageTwo_shopping = (props) => {
- 
-  
-    const [EnteredGrocery, setEnteredGrocery] = useState('');
-    const shoppingListItemsStateDerived = useSelector((state) => state.shoppingListFavorites.shoppingList)
+  const [EnteredGrocery, setEnteredGrocery] = useState('');
+  const shoppingListItemsStateDerived = useSelector(
+    (state) => state.shoppingListFavorites.shoppingList
+  );
 
-
-   const enteredGroceryHandler = (enteredText) => {
+  const enteredGroceryHandler = (enteredText) => {
     setEnteredGrocery(enteredText);
   };
-   const resetSetGrocery = () => {
+  const resetSetGrocery = () => {
     setEnteredGrocery('');
-    
   };
-/*
+
+  const handleStackNavigatorToQuantity = (id) => {
+    props.navigation.navigate({
+      routeName: 'ShoppingItemDetails',
+      params: {
+        ItemID: id
+      },
+    });
+  };
+  /*
   function addItemHandler(title) {
     SHOPPINGITEMS.unshift(new shoppingList('A2', title, '10kg'));
     setEnteredGrocery('');
@@ -33,12 +43,16 @@ const PageTwo_shopping = (props) => {
 
   return (
     <View>
-      <AddItemHeader  enteredGroceryHandler={enteredGroceryHandler} resetSetGrocery={resetSetGrocery} EnteredGrocery={EnteredGrocery} /* addItemHandler={addItemHandler} */></AddItemHeader>
-      <SearchItemsRecommendation EnteredGrocery={EnteredGrocery}/>
+      <AddItemHeader
+        enteredGroceryHandler={enteredGroceryHandler}
+        resetSetGrocery={resetSetGrocery}
+        EnteredGrocery={EnteredGrocery} /* addItemHandler={addItemHandler} */
+      ></AddItemHeader>
+      <SearchItemsRecommendation EnteredGrocery={EnteredGrocery} />
       <ShoppingListView
         SHOPPINGITEMS={shoppingListItemsStateDerived}
-      /> 
-
+        handleStackNavigatorToQuantity={handleStackNavigatorToQuantity}
+      />
     </View>
   );
 };
@@ -47,9 +61,8 @@ PageTwo_shopping.navigationOptions = {
   headerTitle: 'test',
   headerStyle: {
     backgroundColor: '#639a67',
-    
   },
-  header: null,
+  headerShown: false,
 };
 
 const styles = StyleSheet.create({

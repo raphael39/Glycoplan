@@ -40,35 +40,42 @@ const ShoppingListView = (props) => {
       <ScrollView keyboardShouldPersistTaps={'handled'}>
         {/* this is start of green */}
         {greenShoppingItems.map((GroceryItem) => (
-          <View style={styles.listItem} key={`shopping${GroceryItem.id}`}>
-            <View>
-            <Text>{GroceryItem.title}</Text>
-            <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
-            </View>
-            <TouchableOpacity
-              onPress={() => {
-                deleteItemHandler(GroceryItem.id);
-              }}
-            >
-              <View
-                style={{
-                  borderColor: 'green',
-                  borderWidth: 3,
-                  width: 25,
-                  height: 25,
-                  borderRadius: '50%',
+          <TouchableOpacity
+            onPress={() => {
+              props.handleStackNavigatorToQuantity(GroceryItem.id)
+            }}
+            key={`shopping90View${GroceryItem.id}`}
+          >
+            <View style={styles.listItem} key={`shopping${GroceryItem.id}`}>
+              <View style={{ maxWidth: '90%' }}>
+                <Text>{GroceryItem.title}</Text>
+                <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
+              </View>
+              <TouchableOpacity
+                onPress={() => {
+                  deleteItemHandler(GroceryItem.id);
                 }}
-              ></View>
-            </TouchableOpacity>
-          </View>
+              >
+                <View
+                  style={{
+                    borderColor: 'green',
+                    borderWidth: 3,
+                    width: 25,
+                    height: 25,
+                    borderRadius: '50%',
+                  }}
+                ></View>
+              </TouchableOpacity>
+            </View>
+          </TouchableOpacity>
         ))}
         {/* this is end of green */}
         {/* this is Start of yellow */}
         {yellowShoppingItems.map((GroceryItem) => (
           <View style={styles.listItem2} key={`shopping${GroceryItem.id}`}>
-            <View>
-            <Text>{GroceryItem.title}</Text>
-            <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
+            <View style={{ maxWidth: '90%' }}>
+              <Text>{GroceryItem.title}</Text>
+              <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
             </View>
 
             <TouchableOpacity
@@ -92,9 +99,9 @@ const ShoppingListView = (props) => {
         {/* this is Start of Red */}
         {redShoppingItems.map((GroceryItem) => (
           <View style={styles.listItem3} key={`shopping${GroceryItem.id}`}>
-            <View>
-            <Text>{GroceryItem.title}</Text>
-            <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
+            <View style={{ maxWidth: '90%' }}>
+              <Text>{GroceryItem.title}</Text>
+              <Text style={styles.quantity}>{GroceryItem.quantity}</Text>
             </View>
 
             <TouchableOpacity
@@ -236,7 +243,12 @@ const styles = StyleSheet.create({
   },
   quantity: {
     fontSize: 11,
-  }
+  },
+  title: {
+    width: '75%',
+    marginBottom: 15,
+    marginTop: 15,
+  },
 });
 
 export default ShoppingListView;
