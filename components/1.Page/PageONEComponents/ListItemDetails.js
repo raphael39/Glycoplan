@@ -10,18 +10,20 @@ import {
 } from 'react-native';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import { GlycoListeData } from './../../../Data/data';
 
 
 const ListItemDetails = (props) => {
   const dispatch = useDispatch();
   const selectedItemID = props.navigation.getParam('selectedItemID');
-  
+  const selectedNutrientItem = GlycoListeData.find((Item) => Item.id === selectedItemID);
+  console.log(selectedNutrientItem);
 
  
 
   return (
-    <View>
-      <Text>{selectedItemID}</Text>
+    <View style={styles.PageViewItemDetails}>
+      <Text>{selectedNutrientItem.nutrients.Ballaststoff}</Text>
     </View>
   );
 };
@@ -33,8 +35,8 @@ export default ListItemDetails;
 
 
 const styles = StyleSheet.create({
-    styleOne: {
-      
+    PageViewItemDetails: {
+      marginTop: 30, 
     },
     styleTwo: {
     },
