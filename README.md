@@ -1,10 +1,10 @@
 # Glycoplan
-this is a nutrition plan "Glycoplan" created with react-native
+
 
 <br />
 <p align="center">
   <a href="./assets/Simulator_Demo.png">
-    <img src="./client/public/dashboard.png" alt="Logo" width="300" height="100">
+    <img src="./assets/Simulator_Demo.png" alt="Logo" width="100%" height="100%">
   </a>
 
   <h3 align="center">Glycoplan</h3>
