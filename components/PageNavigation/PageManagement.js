@@ -42,7 +42,7 @@ const GlycoListNavigator = createStackNavigator(
     GlycoListe: {
       screen: PageOne
     },
-    NutrientDetails: {
+    NutrientsDetails: {
       screen: ListItemDetails
     }
   }

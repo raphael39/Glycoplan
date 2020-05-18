@@ -41,7 +41,7 @@ const PageOne = (props) => {
 
   const handleStackNavigatorToDetails = (id) => {
     props.navigation.navigate({
-      routeName: 'NutrientDetails',
+      routeName: 'NutrientsDetails',
       params: {
         selectedItemID: id
       },
@@ -83,7 +83,7 @@ const PageOne = (props) => {
   );
 };
 PageOne.navigationOptions = {
-  headerTitle: 'test',
+  headerTitle: 'Glycoplan',
   headerStyle: {
     backgroundColor: '#639a67',
   },
