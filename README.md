@@ -13,7 +13,7 @@
     a interactive nutrition plan called "Glycoplan". Created in collaboration with Dr. med. Kurt Mosetter. The mobile app helps people to follow the nutrition plan and get extra insights.
     <br />
 
-    ## Usage
+## Usage
 
 1. User has 3 tabs. First the plan itself with traffic light symbols for each food. The first tab als includes a search functionality and nutrient details.
 2. The second or middle tab is the shopping list. Here, the user can add food items, alter the quantity and see the same color code as it has in the plan. Working on: nutrient analysis of the shopping list with charts
