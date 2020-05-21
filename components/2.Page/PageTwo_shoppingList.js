@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
-import { Text, StyleSheet, View } from 'react-native';
+import { Text, StyleSheet, View, ScrollView } from 'react-native';
 import { useDispatch } from 'react-redux';
 import {
   addItemToList,
@@ -34,6 +34,14 @@ const PageTwo_shopping = (props) => {
       },
     });
   };
+  const handleStackNavigatorToAnalysis = (allNutrientsMessenger) => {
+    props.navigation.navigate({
+      routeName: 'NutrientsDetailsPage',
+      params: {
+        allNutrientsMessenger: allNutrientsMessenger
+      }
+    });
+  };
   /*
   function addItemHandler(title) {
     SHOPPINGITEMS.unshift(new shoppingList('A2', title, '10kg'));
@@ -42,7 +50,7 @@ const PageTwo_shopping = (props) => {
   } */
 
   return (
-    <View>
+    <ScrollView>
       <AddItemHeader
         enteredGroceryHandler={enteredGroceryHandler}
         resetSetGrocery={resetSetGrocery}
@@ -52,8 +60,9 @@ const PageTwo_shopping = (props) => {
       <ShoppingListView
         SHOPPINGITEMS={shoppingListItemsStateDerived}
         handleStackNavigatorToQuantity={handleStackNavigatorToQuantity}
+        handleStackNavigatorToAnalysis={handleStackNavigatorToAnalysis}
       />
-    </View>
+    </ScrollView>
   );
 };
 

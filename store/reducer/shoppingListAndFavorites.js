@@ -1,4 +1,4 @@
-import { SHOPPINGITEMS, green, yellow } from '../../Data/data';
+import { SHOPPINGITEMS, green, yellow, GlycoListeData } from '../../Data/data';
 import { ADD_ITEM_TOLIST } from '../actions/shoppingListAndFavorites';
 import { DELETE_ITEM_FROMLIST } from '../actions/shoppingListAndFavorites';
 import { FILTER_RECOMMENDATIONS } from '../actions/shoppingListAndFavorites';
@@ -25,10 +25,11 @@ const shoppingListFavoritesReducer = (state = initialState, action) => {
         ...state,
         shoppingList: [
           new shoppingListModel(
-            Math.random().toString(),
+            `${action.sentID}_${Math.random().toString()}`,
             action.ItemTitle,
             '100g',
-            action.colorCode
+            action.colorCode, 
+            action.nutrients,
           ),
           ...state.shoppingList,
         ],

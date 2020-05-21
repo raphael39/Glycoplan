@@ -21,38 +21,48 @@ const GlycoList = (props) => {
     <ScrollView style={styles.scrollView} keyboardShouldPersistTaps={'handled'}>
       {props.green.map((goal) => (
         <TouchableOpacity
-        onPress={() => {
-          props.handleStackNavigatorToDetails(goal.id)
-        }}
-        key={`shopping90View${goal.id}`}
-      >
-        <View style={styles.listItem} key={goal.id}>
-          <Text style={styles.title} key={goal.title}>{goal.title}</Text>
-          <TouchableOpacity onPress={() => addItemHandler(goal)}>
-            <View
-              key={`addButton${goal.id}`}
-              style={{
-                backgroundColor: 'green',
-                width: 75,
-                height: 37,
-                marginRight: 10,
-                borderRadius: '50%',
-                display: 'flex',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
+          onPress={() => {
+            props.handleStackNavigatorToDetails(goal.id);
+          }}
+          key={`shopping90View${goal.id}`}
+        >
+          
+          <View style={styles.listItem} key={goal.id}>
+            <Text style={styles.title} key={goal.title}>
+              {goal.title}
+            </Text>
+            <TouchableOpacity
+              onPress={() => {
+                return addItemHandler(goal);
+                
               }}
             >
-              <Text>➕🛒</Text>
-            </View>
-          </TouchableOpacity>
-        </View>
+              <View
+                key={`addButton${goal.id}`}
+                style={{
+                  backgroundColor: 'green',
+                  width: 75,
+                  height: 37,
+                  marginRight: 10,
+                  borderRadius: '50%',
+                  display: 'flex',
+                  flexDirection: 'row',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                }}
+              >
+                <Text>➕🛒</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </TouchableOpacity>
       ))}
 
       {props.yellow.map((goal) => (
         <View style={styles.listItem2} key={goal.id}>
-          <Text style={styles.title} key={goal.title}>{goal.title}</Text>
+          <Text style={styles.title} key={goal.title}>
+            {goal.title}
+          </Text>
 
           <TouchableOpacity onPress={() => addItemHandler(goal)}>
             <View
@@ -76,7 +86,9 @@ const GlycoList = (props) => {
       ))}
       {props.red.map((goal) => (
         <View style={styles.listItem3} key={goal.id}>
-          <Text style={styles.title} key={goal.title} >{goal.title}</Text>
+          <Text style={styles.title} key={goal.title}>
+            {goal.title}
+          </Text>
 
           <TouchableOpacity onPress={() => addItemHandler(goal)}>
             <View
@@ -146,7 +158,7 @@ const styles = StyleSheet.create({
     width: '75%',
     marginBottom: 15,
     marginTop: 15,
-  }
+  },
 });
 
 export default GlycoList;

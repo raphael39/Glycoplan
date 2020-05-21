@@ -4,7 +4,7 @@ export const FILTER_RECOMMENDATIONS = 'FILTER_RECOMMENDATIONS';
 export const UPDATE_QUANTITY ='UPDATE_QUANTITY';
 
 export const addItemToList = (Grocery) => {
-    return { type: ADD_ITEM_TOLIST, ItemTitle: Grocery.title, colorCode: Grocery.color};
+    return { type: ADD_ITEM_TOLIST, ItemTitle: Grocery.title, colorCode: Grocery.color, sentID: Grocery.id, nutrients: Grocery.nutrients};
 };
 
 export const deleteItemFromList = (id) => {

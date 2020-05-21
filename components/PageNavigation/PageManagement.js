@@ -9,6 +9,7 @@ import PageOne from '../1.Page/PageONE';
 import ListItemDetails from '../1.Page/PageONEComponents/ListItemDetails';
 import PageTwo_shopping from '../2.Page/PageTwo_shoppingList';
 import PageTwoItemDetails from '../2.Page/PageTWOComponents/ShoppingQuantity';
+import NutrientsDetails from '../2.Page/PageTWOComponents/nutrientsAnalysis';
 import PageThreeRecipes from '../3.Page/PageThree_recipes';
 import { color } from 'react-native-reanimated';
 import RecipesPage from '../3.Page/PageThree_recipes';
@@ -33,6 +34,9 @@ const ShoppingListNavigator = createStackNavigator(
     },
     ShoppingItemDetails: {
       screen: PageTwoItemDetails
+    },
+    NutrientsDetailsPage: {
+      screen: NutrientsDetails
     }
   }
 )
