@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addItemToList, filterRecommendations } from './../../../store/actions/shoppingListAndFavorites';
+import { addItemToList, filterRecommendations } from '../../store/actions/shoppingListAndFavorites';
 import {
   Text,
   View,
@@ -33,7 +33,7 @@ const AddItem = (props) => {
         <TextInput
           multiline={false}
           value={props.EnteredGrocery}
-          placeholder="Lebensmittel hinzufügen..."
+          placeholder="eigene Lebensmittel hinzufügen..."
           style={styles.inputContainer}
           onChangeText={props.enteredGroceryHandler}
           onSubmitEditing={(e) => returnKeyboardHandler(e)}

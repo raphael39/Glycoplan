@@ -1,5 +1,5 @@
 import React from 'react';
-import PageManagement from './components/PageNavigation/PageManagement';
+import PageManagement from './Navigation/PageManagement';
 import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import shoppingListFavoritesReducer from './store/reducer/shoppingListAndFavorites';

@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
-import { updateQuantity } from './../../../store/actions/shoppingListAndFavorites';
+import { updateQuantity } from '../../store/actions/shoppingListAndFavorites';
 
 const ShoppingQuantity = (props) => {
   const dispatch = useDispatch();
@@ -22,18 +22,29 @@ const ShoppingQuantity = (props) => {
   let selectedItem = shoppingListItemsStateDerived.find(
     (GroceryItem) => GroceryItem.id === ItemID
   );
+  let GesamtGewicht = 0;
+  if (selectedItem.ratio) {
+    GesamtGewicht = parseInt(selectedItem.quantity.split(' ')[0] * parseInt(selectedItem.ratio.split(' ')[0]));
+    console.log(GesamtGewicht);
+  }
+  
+
 
   const handleQuantity = (newQuantity) => {
+    if (selectedItem.ratio) {
+    GesamtGewicht = newQuantity * parseInt(selectedItem.ratio.split(' ')[0]);
+    }
+    
     setEnteredInputQuantity(newQuantity);
   };
 
   return (
     <View>
-      <Text>{selectedItem.title}</Text>
+      
       <View style={styles.updateInput}>
         <TextInput
           keyboardType="numeric"
-          placeholder={selectedItem.quantity}
+          placeholder={selectedItem.quantity.split(' ')[0]}
           clearButtonMode="always"
           style={styles.inputContainerDetails}
           onChangeText={handleQuantity}
@@ -47,17 +58,20 @@ const ShoppingQuantity = (props) => {
           alignItems: 'center',
         }}>
           <Text key={`${selectedItem.title}`}>
-            g
+            {selectedItem.quantity.split(' ')[1]}
           </Text>
         </View>
         <Button
           title="Update"
           onPress={() => {
-            dispatch(updateQuantity(selectedItem.id, EnteredInputQuantity));
+            dispatch(updateQuantity(selectedItem.id, EnteredInputQuantity, selectedItem.quantity.split(' ')[1]));
             setEnteredInputQuantity('');
           }}
         />
       </View>
+       {(selectedItem.ratio)? (<View><Text>Ø Gewicht = {selectedItem.ratio}</Text>
+        <Text>Gesamtgewicht = {`${GesamtGewicht} g`}</Text></View>) :<Text></Text>}  
+        
     </View>
   );
 };

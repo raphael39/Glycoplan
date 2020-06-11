@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import ListView from './PageONEComponents/GlycoList';
+import ListView from '../../components/1.Page/GlycoList';
 import { View, Text } from 'react-native';
-import Seachrbar from './PageONEComponents/Search';
-import { SHOPPINGITEMS } from './../../Data/data';
-import shoppingList from './../../models/shoppinList';
-import {green, yellow, red} from './../../Data/data'
+import Seachrbar from '../../components/1.Page/Search';
+import { SHOPPINGITEMS } from '../../Data/data';
+import shoppingList from '../../models/shoppinList';
+import {green, yellow, red} from '../../Data/data'
 
 const PageOne = (props) => {
   const [searchValue, setSearchValue] = useState('');

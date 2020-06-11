@@ -6,7 +6,7 @@ import {
   View,
   StyleSheet,
 } from 'react-native';
-import { Recipes } from './../../Data/data';
+import { Recipes } from '../../Data/Recipes';
 
 const PageThreeRecipes = (props) => {
   const renderGridItem = (itemData) => {

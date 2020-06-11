@@ -5,15 +5,15 @@ import { createAppContainer} from 'react-navigation';
 import {createStackNavigator} from 'react-navigation-stack'
 import { Ionicons } from '@expo/vector-icons';
 
-import PageOne from '../1.Page/PageONE';
-import ListItemDetails from '../1.Page/PageONEComponents/ListItemDetails';
-import PageTwo_shopping from '../2.Page/PageTwo_shoppingList';
-import PageTwoItemDetails from '../2.Page/PageTWOComponents/ShoppingQuantity';
-import NutrientsDetails from '../2.Page/PageTWOComponents/nutrientsAnalysis';
-import PageThreeRecipes from '../3.Page/PageThree_recipes';
+import PageOne from '../screens/Page_One_screens/PageONE';
+import ListItemDetails from '../screens/Page_One_screens/ListItemDetails';
+import PageTwo_shopping from '../screens/Page_Two_screens/PageTwo_shoppingList';
+import PageTwoItemDetails from '../screens/Page_Two_screens/ShoppingQuantity';
+import NutrientsDetails from '../screens/Page_Two_screens/nutrientsAnalysis';
+import PageThreeRecipes from '../screens/Page_Three_screens/PageThree_recipes';
 import { color } from 'react-native-reanimated';
-import RecipesPage from '../3.Page/PageThree_recipes';
-import RecipesDetailPage from '../3.Page/PageTHREEComponents/RecipesDetails'
+import RecipesPage from '../screens/Page_Three_screens/PageThree_recipes';
+import RecipesDetailPage from '../screens/Page_Three_screens/RecipesDetails'
 
 
 const RecipeNavigator = createStackNavigator(
@@ -55,14 +55,29 @@ const GlycoListNavigator = createStackNavigator(
 
 const GlycoShoppingNavigator = createBottomTabNavigator(
   {
-    '🚦 Ampelliste': {
+    'Ampelliste': {
       screen: GlycoListNavigator,
+      navigationOptions: {
+        tabBarIcon: (tabInfo) => {
+          return <Text role="img" aria-label="sheep" style={{fontSize: 25}}>🚦</Text>
+        }
+      }
     },
-    '🛒 Einkaufsliste': {
+    'Einkaufsliste': {
       screen: ShoppingListNavigator,
+      navigationOptions: {
+        tabBarIcon: (tabInfo) => {
+          return <Text role="img" aria-label="sheep" style={{fontSize: 22}}>🛒</Text>
+        }
+      }
     },
-    '👨‍🍳 Rezepte': {
+    'Rezepte': {
       screen: RecipeNavigator,
+      navigationOptions: {
+        tabBarIcon: (tabInfo) => {
+          return <Text role="img" aria-label="sheep" style={{fontSize: 22}}>👨‍🍳</Text>
+        }
+      }
     },
   },
   {

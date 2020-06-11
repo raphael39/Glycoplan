@@ -21,19 +21,38 @@ const initialState = {
 const shoppingListFavoritesReducer = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ITEM_TOLIST:
-      return {
-        ...state,
-        shoppingList: [
-          new shoppingListModel(
-            `${action.sentID}_${Math.random().toString()}`,
-            action.ItemTitle,
-            '100g',
-            action.colorCode, 
-            action.nutrients,
-          ),
-          ...state.shoppingList,
-        ],
-      };
+      if (action.sentID) {
+        return {
+          ...state,
+          shoppingList: [
+            new shoppingListModel(
+              `${action.sentID}_${Math.random().toString()}`,
+              action.ItemTitle,
+              action.quantity? action.quantity : '100 g',
+              action.colorCode, 
+              action.nutrients,
+              action.ratio,
+            ),
+            ...state.shoppingList,
+          ],
+        };
+      } else {
+        return {
+          ...state,
+          shoppingList: [
+            new shoppingListModel(
+              Math.random().toString(),
+              action.ItemTitle,
+              action.quantity? action.quantity : '100 g',
+              action.colorCode, 
+              action.nutrients? action.nutrients : 0,
+              action.ratio,
+            ),
+            ...state.shoppingList,
+          ],
+        };
+      }
+      
     case DELETE_ITEM_FROMLIST:
       const existingIndex = state.shoppingList.findIndex(
         (grocery) => grocery.id === action.ItemID
@@ -60,7 +79,7 @@ const shoppingListFavoritesReducer = (state = initialState, action) => {
       const indexUpdate = state.shoppingList.findIndex(
         (GroceryItem) => GroceryItem.id === action.ItemID
       );
-      selectedItem = {...selectedItem, quantity: `${action.quantity}g`};
+      selectedItem = {...selectedItem, quantity: `${action.quantity} ${action.einheit}`};
       const updatedListQuantity= [...state.shoppingList,]
       updatedListQuantity.splice(indexUpdate, 1, selectedItem);
       console.log(updatedListQuantity);

@@ -5,13 +5,13 @@ import { useDispatch } from 'react-redux';
 import {
   addItemToList,
   filterRecommendations,
-} from './../../store/actions/shoppingListAndFavorites';
+} from '../../store/actions/shoppingListAndFavorites';
 
-import AddItemHeader from '../2.Page/PageTWOComponents/AddItemHeader';
-import { SHOPPINGITEMS } from './../../Data/data';
-import shoppingList from './../../models/shoppinList';
-import ShoppingListView from './PageTWOComponents/ShoppingLIst';
-import SearchItemsRecommendation from './PageTWOComponents/SearchItemsRecommendation';
+import AddItemHeader from '../../components/2.Page/AddItemHeader';
+import { SHOPPINGITEMS } from '../../Data/data';
+import shoppingList from '../../models/shoppinList';
+import ShoppingListView from '../../components/2.Page/ShoppingLIst';
+import SearchItemsRecommendation from '../../components/2.Page/SearchItemsRecommendation';
 
 const PageTwo_shopping = (props) => {
   const [EnteredGrocery, setEnteredGrocery] = useState('');

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { addItemToList } from './../../../store/actions/shoppingListAndFavorites';
+import { addItemToList } from '../../store/actions/shoppingListAndFavorites';
 import {
   Text,
   View,
@@ -59,6 +59,12 @@ const GlycoList = (props) => {
       ))}
 
       {props.yellow.map((goal) => (
+        <TouchableOpacity
+        onPress={() => {
+          props.handleStackNavigatorToDetails(goal.id);
+        }}
+        key={`shopping90View${goal.id}`}
+      >
         <View style={styles.listItem2} key={goal.id}>
           <Text style={styles.title} key={goal.title}>
             {goal.title}
@@ -83,8 +89,15 @@ const GlycoList = (props) => {
             </View>
           </TouchableOpacity>
         </View>
+        </TouchableOpacity>
       ))}
       {props.red.map((goal) => (
+        <TouchableOpacity
+        onPress={() => {
+          props.handleStackNavigatorToDetails(goal.id);
+        }}
+        key={`shopping90View${goal.id}`}
+      >
         <View style={styles.listItem3} key={goal.id}>
           <Text style={styles.title} key={goal.title}>
             {goal.title}
@@ -109,6 +122,7 @@ const GlycoList = (props) => {
             </View>
           </TouchableOpacity>
         </View>
+        </TouchableOpacity>
       ))}
     </ScrollView>
   );
